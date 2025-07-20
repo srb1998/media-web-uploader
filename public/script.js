@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const spinner = document.getElementById('spinner');
 
     // Cloudinary configuration (placeholders replaced by Vercel)
-    const cloudName = 'drfuycgyf';
-    const uploadPreset = 'telegram_news_uploader';
+    const cloudName = 'CLOUDINARY_CLOUD_NAME';
+    const uploadPreset = 'CLOUDINARY_UPLOAD_PRESET';
 
     // Check if placeholders were replaced
-    if (cloudName || uploadPreset) {
+    if (cloudName === 'CLOUDINARY_CLOUD_NAME' || uploadPreset === 'CLOUDINARY_UPLOAD_PRESET') {
         titleEl.innerText = "Error";
         descriptionEl.innerText = "Configuration not loaded.";
         uploadButton.disabled = true;
