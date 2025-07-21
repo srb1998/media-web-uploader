@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cloudName,
                 uploadPreset,
                 folder: dynamicFolderPath,
+                notificationUrl: 'https://7546d8e75c37.ngrok-free.app/cloudinary-notification',
                 cropping: false,
                 multiple: true,
                 maxFiles: 10,
