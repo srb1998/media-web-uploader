@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const urlParams = new URLSearchParams(window.location.search);
     const storyId = urlParams.get('story_id');
-    const workflowId = urlParams.get('workflow_id');
+    const workflowId = url_params.get('workflow_id');
     const platform = urlParams.get('platform');
 
     if (!storyId || !workflowId || !platform) {
@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dynamicFolderPath = `news/upload/${workflowId}/${storyId}/${platform}`;
 
+    // --- THIS IS THE DATA THAT WILL BE SENT TO YOUR BACKEND ---
+    const customContext = {
+        story_id: storyId,
+        workflow_id: workflowId,
+        platform: platform
+    };
+
     fetch('/api/cloudinary-config')
         .then(res => res.json())
         .then(({ cloudName, uploadPreset }) => {
@@ -33,7 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 cloudName,
                 uploadPreset,
                 folder: dynamicFolderPath,
-                notificationUrl: 'https://7546d8e75c37.ngrok-free.app/cloudinary-notification',
+                // --- FIX: ADD THE CONTEXT OBJECT HERE ---
+                context: customContext,
+                // -----------------------------------------
                 cropping: false,
                 multiple: true,
                 maxFiles: 10,
