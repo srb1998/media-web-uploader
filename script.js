@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     titleEl.innerText = `Upload for ${platform.charAt(0).toUpperCase() + platform.slice(1)}`;
     descriptionEl.innerText = `Story ID: ${storyId} | Workflow: ${workflowId}`;
 
-    const dynamicFolderPath = `news/upload/${workflowId}/${storyId}/${platform}`;
+    const dynamicFolderPath = `news/processed/${workflowId}/${storyId}/${platform}`;
 
     const customContext = {
         story_id: storyId,
