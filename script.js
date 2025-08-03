@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cloudName,
                 uploadPreset,
                 folder: dynamicFolderPath,
-                notificationUrl: 'https://web-production-0a775.up.railway.app/cloudinary-notification',
+                notificationUrl: 'https://f9265ad60dd4.ngrok-free.app/cloudinary-notification',
                 context: customContext,
                 cropping: false,
                 multiple: true,
