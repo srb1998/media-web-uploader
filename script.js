@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cloudName,
                 uploadPreset,
                 folder: dynamicFolderPath,
-                notificationUrl: 'https://aio-news-production.up.railway.app/cloudinary-notification',
+                notificationUrl: 'https://aio-news.onrender.com/cloudinary-notification',
                 context: customContext,
                 cropping: false,
                 multiple: true,
